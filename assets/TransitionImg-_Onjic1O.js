@@ -1,0 +1,1 @@
+import{r as i,j as a}from"./index-CdkVp6ED.js";function r({src:s,className:t}){const[e,o]=i.useState(!1);return i.useEffect(()=>{setTimeout(()=>o(!0),1)},[]),a.jsx("img",{src:s,className:e?`opacity-100 transition-opacity duration-300 ease-in-out ${t}`:`opacity-0 transition-opacity duration-300 ease-in-out ${t}`})}export{r as T};
