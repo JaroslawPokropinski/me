@@ -1,14 +1,9 @@
 import { Sidebar, useThemeMode } from "flowbite-react";
-import {
-  HiUser,
-  HiAcademicCap,
-  HiBriefcase,
-  HiBeaker,
-  HiMail,
-} from "react-icons/hi";
+import { HiMail } from "react-icons/hi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { Outlet } from "react-router-dom";
+import { appNavigation } from "../navigation";
 
 function IconBar() {
   const { toggleMode, mode } = useThemeMode();
@@ -57,30 +52,38 @@ export function Layout() {
         <IconBar />
         <Sidebar.Items>
           <Sidebar.ItemGroup>
-            <Sidebar.Item href="#/about" icon={HiUser}>
-              About Me
-            </Sidebar.Item>
-
-            <Sidebar.Collapse icon={HiBeaker} label="Projects" open>
-              <Sidebar.Item href="#/projects/screen-sharing">
-                Screen Sharing
-              </Sidebar.Item>
-              <Sidebar.Item href="#/projects/file-sharing">
-                File Sharing
-              </Sidebar.Item>
-            </Sidebar.Collapse>
-
-            <Sidebar.Item href="#/education" icon={HiAcademicCap}>
-              Education
-            </Sidebar.Item>
-
-            <Sidebar.Item href="#/experience" icon={HiBriefcase}>
-              Work Experience
-            </Sidebar.Item>
-
-            {/* <Sidebar.Item href="#/contact" icon={HiPhone}>
-              Contact
-            </Sidebar.Item> */}
+            {appNavigation.map((itemOrGroup) => {
+              if ("items" in itemOrGroup) {
+                return (
+                  <Sidebar.Collapse
+                    key={itemOrGroup.name}
+                    icon={itemOrGroup.icon}
+                    label={itemOrGroup.name}
+                    open
+                  >
+                    {itemOrGroup.items.map((item) => (
+                      <Sidebar.Item
+                        key={item.name}
+                        href={`#${item.path}`}
+                        icon={item.icon}
+                      >
+                        {item.name}
+                      </Sidebar.Item>
+                    ))}
+                  </Sidebar.Collapse>
+                );
+              } else {
+                return (
+                  <Sidebar.Item
+                    key={itemOrGroup.name}
+                    href={`#${itemOrGroup.path}`}
+                    icon={itemOrGroup.icon}
+                  >
+                    {itemOrGroup.name}
+                  </Sidebar.Item>
+                );
+              }
+            })}
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>

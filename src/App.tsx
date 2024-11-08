@@ -6,21 +6,30 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
+import { appNavigation } from "./navigation";
+import React from "react";
 
 const routes = createRoutesFromElements([
   <Route path="/" element={<Layout />}>
-    <Route index element={<Navigate to="/about" replace />} />
-    <Route path="about" lazy={() => import("./pages/About")} />
-    <Route
-      path="projects/screen-sharing"
-      lazy={() => import("./pages/Projects/ScreenSharing")}
-    />
-    <Route
-      path="projects/file-sharing"
-      lazy={() => import("./pages/Projects/FileSharing")}
-    />
-    <Route path="education" lazy={() => import("./pages/Education")} />
-    <Route path="experience" lazy={() => import("./pages/Experience")} />
+    {appNavigation.map((itemOrGroup) => {
+      if ("items" in itemOrGroup) {
+        return (
+          <React.Fragment key={itemOrGroup.name}>
+            {itemOrGroup.items.map((item) => (
+              <Route key={item.name} path={item.path} lazy={item.component} />
+            ))}
+          </React.Fragment>
+        );
+      } else {
+        return (
+          <Route
+            key={itemOrGroup.name}
+            path={itemOrGroup.path}
+            lazy={itemOrGroup.component}
+          />
+        );
+      }
+    })}
     <Route path="*" element={<Navigate to="/about" replace />} />
   </Route>,
 ]);
