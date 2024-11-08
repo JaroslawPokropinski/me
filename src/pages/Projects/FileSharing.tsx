@@ -1,4 +1,4 @@
-import { Card } from "flowbite-react";
+import { Badge, Card } from "flowbite-react";
 import FilePeerImg from "/file-peer.png?url";
 import FileSharingImg from "/file-sharing-cover.png?url";
 import { TransitionImg } from "../../components/TransitionImg";
@@ -11,6 +11,15 @@ export function Component() {
       </h1>
 
       <Card>
+        <div id="tags" className="flex flex-wrap gap-2">
+          <Badge color="gray">TypeScript</Badge>
+          <Badge color="gray">Node.js</Badge>
+          <Badge color="gray">React</Badge>
+          <Badge color="gray">WebRTC</Badge>
+          <Badge color="gray">ORM</Badge>
+          <Badge color="gray">PostgreSQL</Badge>
+        </div>
+
         <p className="mb-1 font-normal text-gray-600 dark:text-white">
           A simple file sharing project. Its purpose is to simplify the process
           of transfering files between devices focused on the mobile to pc and

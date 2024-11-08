@@ -1,4 +1,4 @@
-import { Card } from "flowbite-react";
+import { Badge, Card } from "flowbite-react";
 import NuxtScreenShareImg from "/nuxt-screenshare.png?url";
 import ScreenSharingImg from "/screensharing.png?url";
 import { TransitionImg } from "../../components/TransitionImg";
@@ -11,6 +11,16 @@ export function Component() {
       </h1>
 
       <Card>
+        <div id="tags" className="flex flex-wrap gap-2">
+          <Badge color="gray">TypeScript</Badge>
+          <Badge color="gray">React</Badge>
+          <Badge color="gray">Node.js</Badge>
+          <Badge color="gray">Redux</Badge>
+          <Badge color="gray">Websocket</Badge>
+          <Badge color="gray">Vue</Badge>
+          <Badge color="gray">Nuxt</Badge>
+        </div>
+
         <p className="mb-1 font-normal text-gray-600 dark:text-white">
           Screensharing is an app that can be used to share screen using the
           browser. Video is shared between clients using peerjs. It was

@@ -1,4 +1,4 @@
-import { Card } from "flowbite-react";
+import { Badge, Card } from "flowbite-react";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { TransitionImg } from "../../components/TransitionImg";
 import RayTraceImg from "/raytrace.png?url";
@@ -50,6 +50,14 @@ export function Component() {
       </h1>
 
       <Card>
+        <div id="tags" className="flex flex-wrap gap-2">
+          <Badge color="gray">TypeScript</Badge>
+          <Badge color="gray">Node.js</Badge>
+          <Badge color="gray">C++</Badge>
+          <Badge color="gray">Napi</Badge>
+          <Badge color="gray">OpenCL</Badge>
+        </div>
+
         <p className="mb-1 font-normal text-gray-600 dark:text-white">
           Source:{" "}
           <a
