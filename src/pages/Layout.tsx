@@ -4,6 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { Outlet } from "react-router-dom";
 import { appNavigation } from "../navigation";
+import { TransitionImg } from "../components/TransitionImg";
 
 function IconBar() {
   const { toggleMode, mode } = useThemeMode();
@@ -48,7 +49,10 @@ export function Layout() {
   return (
     <div className="flex h-screen gap-2 dark:bg-gray-900">
       <Sidebar aria-label="sidebar" className="h-full">
-        <img src="./me-big.jpg" className="rounded-full p-6" />
+        <TransitionImg
+          src="./me-big.jpg"
+          className="h-[232px] rounded-full p-6"
+        />
         <IconBar />
         <Sidebar.Items>
           <Sidebar.ItemGroup>
