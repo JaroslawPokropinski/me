@@ -26,11 +26,11 @@ export const appNavigation: (NavigationObj | NavigationGroup)[] = [
     name: "Projects",
     icon: HiBeaker,
     items: [
-      // {
-      //   name: "Node GPGPU",
-      //   path: "/projects/node-gpgpu",
-      //   component: () => import("./pages/Projects/NodeGpgpu"),
-      // },
+      {
+        name: "Node GPGPU",
+        path: "/projects/node-gpgpu",
+        component: () => import("./pages/Projects/NodeGpgpu"),
+      },
       {
         name: "File Sharing",
         path: "/projects/file-sharing",
