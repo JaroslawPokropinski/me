@@ -32,6 +32,16 @@ export const appNavigation: (NavigationObj | NavigationGroup)[] = [
         component: () => import("./pages/Projects/NodeGpgpu"),
       },
       {
+        name: "Job Offer Manager",
+        path: "/projects/job-offer-manager",
+        component: () => import("./pages/Projects/JobOfferManager"),
+      },
+      {
+        name: "EleDeejey",
+        path: "/projects/eledeejey",
+        component: () => import("./pages/Projects/Eledeejey"),
+      },
+      {
         name: "File Sharing",
         path: "/projects/file-sharing",
         component: () => import("./pages/Projects/FileSharing"),
