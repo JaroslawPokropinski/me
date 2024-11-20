@@ -39,7 +39,7 @@ export const appNavigation: (NavigationObj | NavigationGroup)[] = [
       {
         name: "EleDeejey",
         path: "/projects/eledeejey",
-        component: () => import("./pages/Projects/Eledeejey"),
+        component: () => import("./pages/Projects/EleDeejey"),
       },
       {
         name: "File Sharing",
