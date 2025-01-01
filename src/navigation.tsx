@@ -32,6 +32,11 @@ export const appNavigation: (NavigationObj | NavigationGroup)[] = [
         component: () => import("./pages/Projects/NodeGpgpu"),
       },
       {
+        name: "Strict Null Checks",
+        path: "/projects/eslint-plugin-strict-null-checks",
+        component: () => import("./pages/Projects/StrictNullChecks"),
+      },
+      {
         name: "Job Offer Manager",
         path: "/projects/job-offer-manager",
         component: () => import("./pages/Projects/JobOfferManager"),
