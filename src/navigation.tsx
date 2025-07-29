@@ -23,6 +23,12 @@ export const appNavigation: (NavigationObj | NavigationGroup)[] = [
     component: () => import("./pages/About"),
   },
   {
+    name: "Work Experience",
+    path: "/experience",
+    icon: HiBriefcase,
+    component: () => import("./pages/Experience"),
+  },
+  {
     name: "Projects",
     icon: HiBeaker,
     items: [
@@ -64,11 +70,5 @@ export const appNavigation: (NavigationObj | NavigationGroup)[] = [
     path: "/education",
     icon: HiAcademicCap,
     component: () => import("./pages/Education"),
-  },
-  {
-    name: "Work Experience",
-    path: "/experience",
-    icon: HiBriefcase,
-    component: () => import("./pages/Experience"),
   },
 ];

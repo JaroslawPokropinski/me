@@ -1,6 +1,7 @@
 import { Card, List, Timeline } from "flowbite-react";
 import MstrLogo from "/MSTR.svg?url";
 import NcdcLogo from "/ncdc-logo.jpg?url";
+import TooplooxLogo from "/tooploox_logo.jpg?url";
 import { TransitionImg } from "../components/TransitionImg";
 
 function ExperienceCard({
@@ -59,6 +60,31 @@ export function Component() {
       <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-300">
         Experience
       </h1>
+
+      <ExperienceCard
+        title="Tooploox"
+        image={TooplooxLogo}
+        positions={[
+          {
+            title: "Software Engineer",
+            years: "February 2025 - ",
+          },
+        ]}
+        description={
+          <List className="ml-4 list-outside">
+            <List.Item className="text-gray-600 dark:text-white">
+              Worked on various projects for the Ebay.com including{" "}
+              <a
+                className="text-blue-600 hover:underline dark:text-blue-500"
+                href="https://www.ebay.com/ebaylive"
+              >
+                Ebay Live
+              </a>
+              .
+            </List.Item>
+          </List>
+        }
+      />
 
       <ExperienceCard
         title="MicroStrategy"
