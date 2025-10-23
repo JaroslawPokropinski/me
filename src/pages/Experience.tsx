@@ -73,14 +73,9 @@ export function Component() {
         description={
           <List className="ml-4 list-outside">
             <List.Item className="text-gray-600 dark:text-white">
-              Worked on various projects for the Ebay.com including{" "}
-              <a
-                className="text-blue-600 hover:underline dark:text-blue-500"
-                href="https://www.ebay.com/ebaylive"
-              >
-                Ebay Live
-              </a>
-              .
+              Developed a real-time live shopping platform using React (SSR),
+              TypeScript, and GraphQL. Built responsive UI components, shared
+              libraries.
             </List.Item>
           </List>
         }
