@@ -23,14 +23,6 @@ const links = routes.map((path, idx) => ({
   priority: idx === 0 ? 1.0 : 0.8,
 }));
 
-// const stream = new SitemapStream({ hostname: homepage });
-// links.forEach((l) => stream.write(l));
-// stream.end();
-// const sitemap = await streamToPromise(stream);
-
-// writeFileSync(resolve("dist/sitemap.xml"), sitemap.toString());
-// console.log("Generated dist/sitemap.xml");
-
 const stream = new SitemapStream({ hostname: homepage });
 
 streamToPromise(Readable.from(links).pipe(stream))
