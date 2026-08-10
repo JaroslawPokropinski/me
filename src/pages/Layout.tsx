@@ -5,6 +5,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { Outlet } from "react-router-dom";
 import { appNavigation } from "../navigation";
 import { TransitionImg } from "../components/TransitionImg";
+import ProfilePicture from "/me-big.jpg?url";
 
 function IconBar() {
   const { toggleMode, mode } = useThemeMode();
@@ -20,7 +21,7 @@ function IconBar() {
 
       <a
         className="rounded-full p-4 text-gray-600 hover:cursor-pointer hover:bg-slate-300 dark:text-white dark:hover:bg-slate-900"
-        href="https://www.linkedin.com/in/jaroslaw-pokropinski/"
+        href="https://linkedin.com/in/jaroslaw-pokropinski/"
         target="_blank"
       >
         <FaLinkedin className="size-6" />
@@ -50,7 +51,7 @@ export function Layout() {
     <div className="flex h-screen gap-2 dark:bg-gray-900">
       <Sidebar aria-label="sidebar" className="h-full">
         <TransitionImg
-          src="./me-big.jpg"
+          src={ProfilePicture}
           className="h-[232px] rounded-full p-6"
         />
         <IconBar />
@@ -80,7 +81,7 @@ export function Layout() {
                 return (
                   <Sidebar.Item
                     key={itemOrGroup.name}
-                    href={itemOrGroup.path}
+                    href={`#${itemOrGroup.path}`}
                     icon={itemOrGroup.icon}
                   >
                     {itemOrGroup.name}

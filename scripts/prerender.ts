@@ -2,22 +2,21 @@ import Prerenderer from "@prerenderer/prerenderer";
 import PuppeteerRenderer from "@prerenderer/renderer-puppeteer";
 import fs from "fs";
 import path from "path";
-import { appNavigation } from "../src/navigation";
 import * as cheerio from "cheerio";
 
 const routes = [
   "/index.html",
-  ...appNavigation.flatMap((itemOrGroup) => {
-    if ("path" in itemOrGroup) {
-      return itemOrGroup.path;
-    }
+  // ...appNavigation.flatMap((itemOrGroup) => {
+  //   if ("path" in itemOrGroup) {
+  //     return itemOrGroup.path;
+  //   }
 
-    if ("items" in itemOrGroup) {
-      return itemOrGroup.items.map((subItem) => subItem.path);
-    }
+  //   if ("items" in itemOrGroup) {
+  //     return itemOrGroup.items.map((subItem) => subItem.path);
+  //   }
 
-    return [];
-  }),
+  //   return [];
+  // }),
 ];
 
 async function prerender() {
@@ -37,10 +36,6 @@ async function prerender() {
       const outputFile = path.join(outputDir, "index.html");
 
       const $ = cheerio.load(renderedRoute.html);
-      // // remove image sources from the prerendered HTML
-      // $("img").each((_, img) => {
-      //   $(img).attr("src", "");
-      // });
 
       fs.mkdirSync(outputDir, { recursive: true });
       fs.writeFileSync(outputFile, $.html());

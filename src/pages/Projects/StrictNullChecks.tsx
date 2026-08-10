@@ -14,7 +14,7 @@ export function Component() {
           <a href="https://github.com/JaroslawPokropinski/eslint-plugin-strict-null-checks">
             <img src="https://img.shields.io/github/stars/JaroslawPokropinski/eslint-plugin-strict-null-checks?style=social&label=Star&maxAge=2592000" />
           </a>
-          <a href="https://www.npmjs.com/package/eslint-plugin-strict-null-checks">
+          <a href="https://npmjs.com/package/eslint-plugin-strict-null-checks">
             <img src="https://badgen.net/npm/dy/eslint-plugin-strict-null-checks" />
           </a>
         </div>

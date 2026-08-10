@@ -10,6 +10,13 @@
   <meta name="description" content="Jarosław Pokropiński Personal Page" />
   <meta name="keywords" content="Jarosław Pokropiński, portfolio, About Me" />
   <meta name="google-site-verification" content="cqgFNd6BpKPM7b4wN5aM-ItwRWfVOiwZK4hriD_reOo" />
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 </head>
 
 <body>

@@ -43,7 +43,7 @@ export function Component() {
           hardware uses 3d printed case from thingiverse:
           <a
             className="text-blue-600 hover:underline dark:text-blue-500"
-            href="https://www.thingiverse.com/thing:6548595"
+            href="https://thingiverse.com/thing:6548595"
             target="_blank"
           >
             {" "}

@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "prerender": "tsx ./scripts/prerender.ts",
     "generate-sitemap": "tsx ./scripts/generate-sitemap.ts",
-    "predeploy": "npm run build && npm run prerender && npm run generate-sitemap",
+    "predeploy": "npm run build && npm run prerender",
     "deploy": "tsx ./scripts/deploy.ts",
     "preview": "vite preview",
     "format": "prettier . --write",

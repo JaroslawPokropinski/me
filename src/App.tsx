@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Navigate,
   Route,
@@ -10,7 +10,7 @@ import { appNavigation } from "./navigation";
 import React from "react";
 
 const routes = createRoutesFromElements([
-  <Route path="/" element={<Layout />}>
+  <Route path="/" element={<Layout />} HydrateFallback={() => <Layout />}>
     {appNavigation.map((itemOrGroup) => {
       if ("items" in itemOrGroup) {
         return (
@@ -35,7 +35,7 @@ const routes = createRoutesFromElements([
   </Route>,
 ]);
 
-const router = createBrowserRouter(routes);
+const router = createHashRouter(routes);
 
 function App() {
   return <RouterProvider router={router} />;
