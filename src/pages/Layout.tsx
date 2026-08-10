@@ -80,7 +80,7 @@ export function Layout() {
                 return (
                   <Sidebar.Item
                     key={itemOrGroup.name}
-                    href={`#${itemOrGroup.path}`}
+                    href={itemOrGroup.path}
                     icon={itemOrGroup.icon}
                   >
                     {itemOrGroup.name}

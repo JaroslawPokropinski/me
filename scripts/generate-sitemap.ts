@@ -5,7 +5,7 @@ import { homepage } from "../package.json";
 import { appNavigation } from "../src/navigation";
 import { Readable } from "stream";
 
-const routes = appNavigation.flatMap((item) => {
+const routes = ["/", ...appNavigation.flatMap((item) => {
   if ("path" in item) {
     return item.path;
   }
@@ -15,10 +15,10 @@ const routes = appNavigation.flatMap((item) => {
   }
 
   return [];
-});
+})];
 
 const links = routes.map((path, idx) => ({
-  url: `#${path}`,
+  url: path,
   changefreq: "weekly" as const,
   priority: idx === 0 ? 1.0 : 0.8,
 }));

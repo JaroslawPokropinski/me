@@ -1,5 +1,5 @@
 import {
-  createHashRouter,
+  createBrowserRouter,
   createRoutesFromElements,
   Navigate,
   Route,
@@ -35,7 +35,7 @@ const routes = createRoutesFromElements([
   </Route>,
 ]);
 
-const router = createHashRouter(routes);
+const router = createBrowserRouter(routes);
 
 function App() {
   return <RouterProvider router={router} />;
