@@ -24,7 +24,7 @@ function ExperienceCard({
           </h2>
 
           <div className="mb-4 font-normal text-gray-600 dark:text-white">
-            {positions.length <= 1 ? (
+            {positions.length <= 0 ? (
               positions[0].title
             ) : (
               <Timeline horizontal>
@@ -67,7 +67,7 @@ export function Component() {
         positions={[
           {
             title: "Software Engineer",
-            years: "February 2025 - ",
+            years: "February 2025 - Now",
           },
         ]}
         description={
